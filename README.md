@@ -31,3 +31,15 @@ $ npm stop
 
 
 [egg]: https://eggjs.org
+
+
+
+### package 说明
+
+| 名称 | 说明 |
+| ------ | ------ |
+| egg | eggjs |
+| egg-jwt | jwt校验 |
+| egg-mysql | 数据库 |
+| egg-view-nunjucks | 模板渲染 |
+| moment | 时间 |
