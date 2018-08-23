@@ -7,12 +7,15 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1534821215413_8532';
 
   // add your config here
-  config.middleware = [];
+  config.middleware = [
+    // 'unless', // 过滤，eggjs不知道怎么写
+    // 'auth', // 权限
+  ];
 
   // http://www.cmd5.com/ 管理自己
   // jwt 密钥
   config.jwt = {
-    secret: "be52fe8111dd847e"
+    secret: "be52fe8111dd847e",
   };
 
   // 单数据库信息配置
@@ -39,7 +42,7 @@ module.exports = appInfo => {
   config.view = {
     defaultViewEngine: 'nunjucks',
     mapping: {
-      '.tpl': 'nunjucks',
+      '.html': 'nunjucks',
     },
   };
 
