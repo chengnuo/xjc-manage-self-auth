@@ -9,7 +9,11 @@ class HomeController extends Controller {
    */
   async index() {
     const { ctx } = this;
-    ctx.cookies.set('jwt', null);
+    ctx.cookies.set('jwt', null, {
+      // maxAge: Math.floor(Date.now() / 1000) + (60 * 60) * 5,
+      domain: '.vquery.com',
+      httponly: true,
+    });
     if(ctx.session.uersResult){
       const resultToken = await this.app.mysql.update('user', {
         id: ctx.session.uersResult.id, // 找到id

@@ -73,7 +73,7 @@ class HomeController extends Controller {
         if(resultToken.affectedRows===1){
           ctx.cookies.set('jwt', `${token}`,{
             maxAge: Math.floor(Date.now() / 1000) + (60 * 60) * 5,
-            // domain: '.taobao.com',
+            domain: '.vquery.com',
             httponly: true,
           });
           ctx.session.uersResult = uersResult; // 缓存用户信息
