@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>统一登录passport</title>
+</head>
+<body>
+
+登录成功
+
+<button id="submit">退出登录</button>
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+;$(function(){
+  $("#submit").on("click",function(){
+    $.ajax({
+      url: "/signOut",
+      method: "get",
+      dataType: 'json',
+      contentType: 'application/json',
+      // context: document.body
+//      data: JSON.stringify({
+//        username: $("#username").val(),
+//        password: $("#password").val(),
+//      })
+    }).done(function(data) {
+      if(data.status===200){
+        window.location.reload();
+      }
+      console.log('data', data)
+    });
+  });
+});
+</script>
+</body>
+</html>

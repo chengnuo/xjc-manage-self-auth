@@ -3,6 +3,8 @@
 const Controller = require('egg').Controller;
 const moment = require('moment');
 
+
+
 class HomeController extends Controller {
   /**
    * 查看页面
@@ -13,7 +15,22 @@ class HomeController extends Controller {
     //   message: '登录',
     //   status: 200,
     // };
-    await this.ctx.render('signIn.html');
+
+    const { ctx } = this;
+    let token = ctx.cookies.get('jwt');
+
+
+
+    if(token){
+      let redirectUrl = ctx.query.redirectUrl;
+      if (redirectUrl) {
+        ctx.redirect(`http://${redirectUrl}?token=${token}`);
+      } else {
+        await ctx.render('home.html');
+      }
+    }else {
+      await ctx.render('signIn.html');
+    }
   }
 
 
