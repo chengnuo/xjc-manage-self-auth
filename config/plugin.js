@@ -21,3 +21,15 @@ exports.nunjucks = {
   enable: true,
   package: 'egg-view-nunjucks',
 };
+
+
+// # 黑白名单 {app_root}/config/plugin.js
+exports.cors = {
+  enable: true,
+  package: 'egg-cors',
+};
+
+exports.security = {
+  enable: true,
+  package: 'egg-security',
+};

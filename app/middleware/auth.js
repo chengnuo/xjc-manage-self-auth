@@ -8,6 +8,8 @@ module.exports = () => {
 
     const token = ctx.header.authorization;  // 获取jwt
 
+    console.log(`token`, token)
+
     if(token && token.split(' ')[0]==='Bearer'){
       // # token 查找对比
       const tokenResult = await ctx.app.mysql.get('user', {

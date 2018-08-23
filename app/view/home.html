@@ -14,18 +14,23 @@
 ;$(function(){
   $("#submit").on("click",function(){
     $.ajax({
-      url: "/signOut",
+      url: "http://auth.vquery.com:7001/signOut",
       method: "get",
       dataType: 'json',
       contentType: 'application/json',
-      // context: document.body
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
+        // context: document.body
 //      data: JSON.stringify({
 //        username: $("#username").val(),
 //        password: $("#password").val(),
 //      })
     }).done(function(data) {
       if(data.status===200){
-        window.location.reload();
+        // window.location.reload();
+        window.location.href = `http://auth.vquery.com:7001/signIn`;
       }
       console.log('data', data)
     });
