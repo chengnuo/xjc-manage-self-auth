@@ -24,7 +24,8 @@ class HomeController extends Controller {
     if(token){
       let redirectUrl = ctx.query.redirectUrl;
       if (redirectUrl) {
-        ctx.redirect(`http://${redirectUrl}?token=${token}`);
+        // ctx.redirect(`http://${redirectUrl}`);
+        ctx.redirect(`${redirectUrl}/signIn`);
       } else {
         await ctx.render('home.html');
       }

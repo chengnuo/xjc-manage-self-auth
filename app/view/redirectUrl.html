@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>统一登录passport</title>
+</head>
+<body>
+
+<div class="redirectUrl">登录redirectUrl</div>
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+;$(function(){
+  $('.redirectUrl').on('click',function () {
+    window.location.href = `http://auth.vquery.com:7001/signIn?redirectUrl=${window.location.origin}`;
+  })
+});
+</script>
+</body>
+</html>

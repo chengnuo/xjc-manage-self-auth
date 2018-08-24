@@ -53,9 +53,9 @@ module.exports = appInfo => {
       // ignoreJSON: true,
     },
     // 白名单
-    domainWhiteList: [ 'http://auth.vquery.com:7001', 'http://a.vquery.com:7001' ],
+    // domainWhiteList: [ 'http://auth.vquery.com:7001', 'http://a.vquery.com:7001' ],
     // withCredentials: true,
-    // domainWhiteList:['.vquery.com'],  // security whitelist, starts with '.'
+    domainWhiteList:['.vquery.com','.vquery.com:7001'],  // security whitelist, starts with '.'
   }
 
   // # 黑白名单 {app_root}/config/config.default.js
