@@ -13,4 +13,5 @@ module.exports = app => {
   router.get('/signIn', controller.signIn.html); // 登录
   router.post('/signIn', controller.signIn.signIn); // 登录
   router.get('/signOut', controller.signOut.index); // 登出
+  router.get('/checkToken', controller.checkToken.index); // 校验是否正确
 };
