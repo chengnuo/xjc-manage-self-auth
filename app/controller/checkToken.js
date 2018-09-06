@@ -15,7 +15,7 @@ class CheckTokenController extends Controller {
     if (token === checkToken.token) {
       console.log(`成功`)
       result.status = 200;
-      result.userId = 'test';
+      result.username = checkToken.username;
       result.message = '登录成功';
     }
     ctx.body=result;
