@@ -14,7 +14,7 @@
 ;$(function(){
   $("#submit").on("click",function(){
     $.ajax({
-      url: "http://auth.vquery.com:7001/signOut",
+      url: "http://auth.vquery.com/signOut",
       method: "get",
       dataType: 'json',
       contentType: 'application/json',
@@ -30,7 +30,7 @@
     }).done(function(data) {
       if(data.status===200){
         // window.location.reload();
-        window.location.href = `http://auth.vquery.com:7001/signIn`;
+        window.location.href = `http://auth.vquery.com/signIn`;
       }
       console.log('data', data)
     });

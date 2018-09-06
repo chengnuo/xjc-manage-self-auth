@@ -11,16 +11,8 @@ class HomeController extends Controller {
    * @returns {Promise.<void>}
    */
   async html() {
-    // this.ctx.body = {
-    //   message: '登录',
-    //   status: 200,
-    // };
-
     const { ctx } = this;
     let token = ctx.cookies.get('jwt');
-
-
-
     if(token){
       let redirectUrl = ctx.query.redirectUrl;
       if (redirectUrl) {
