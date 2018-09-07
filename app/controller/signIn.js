@@ -15,9 +15,12 @@ class HomeController extends Controller {
     let token = ctx.cookies.get('jwt');
     if(token){
       let redirectUrl = ctx.query.redirectUrl;
+      console.log(`token`, token)
+      console.log(`redirectUrl`, redirectUrl)
+
       if (redirectUrl) {
         // ctx.redirect(`http://${redirectUrl}`);
-        ctx.redirect(`${redirectUrl}/signIn`);
+        ctx.redirect(`http://${redirectUrl}`);
       } else {
         await ctx.render('home.html');
       }
@@ -67,7 +70,7 @@ class HomeController extends Controller {
           ctx.cookies.set('jwt', `${token}`,{
             maxAge: Math.floor(Date.now() / 1000) + (60 * 60) * 5,
             domain: '.vquery.com',
-            httponly: true,
+            // httponly: true,
           });
           ctx.session.uersResult = uersResult; // 缓存用户信息
           ctx.body = {
